@@ -1,0 +1,132 @@
+html {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1.4;
+}
+
+body {
+    min-height: 100vh;
+}
+
+main {
+    max-width: 100%;
+    margin: 3em auto 0 auto;
+    padding: 1.5em;
+    background-color: #fff;
+}
+
+.month-row {
+    color: #181818;
+    text-align: center;
+    font-weight: 500;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 21px;
+    margin-bottom: 3em;
+}
+
+.day-grid,
+.date-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    min-height: 100%;
+}
+
+.day-grid {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    margin-top: 1.25em;
+    border-bottom: #c7c7cb solid 1px;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+.day-grid>*,
+.date-grid .prev-month {
+    color: #c7c7cb;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+@media (min-width:320px) {
+    .date-grid {
+        grid-row-gap: 1vh;
+    }
+}
+
+@media (min-width:600px) {
+    .date-grid {
+        grid-row-gap: 5vh;
+    }
+}
+
+@media (min-width:801px) {
+    .date-grid {
+        grid-row-gap: 10vh;
+    }
+}
+
+.date-grid {
+    margin-top: 1.3em;
+    justify-items: center;
+}
+
+
+/* Positioning the first day */
+
+.date-grid .curr-month:first-child {
+    grid-column: 6;
+    font-weight: 800;
+}
+
+.date-grid .curr-month {
+    font-weight: bold;
+}
+
+.date-grid .curr-month .curr-date {
+    background: red;
+    position: absolute;
+    border: 3px solid red;
+    border-radius: 3px;
+    top: 0px;
+    right: 0px;
+}
+
+.date-grid button {
+    font-size: 15px;
+    font-family: Helvetica, Arial, sans-serif;
+    position: relative;
+    border: 0;
+    width: 4.5ch;
+    height: 4.5ch;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #181818;
+}
+
+.date-grid button:hover,
+.date-grid button:focus {
+    outline: none;
+    background-color: #ececf1;
+}
+
+.date-grid button:active,
+.date-grid button.is-selected {
+    background-color: #ececf1;
+}
+
+i {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2.5px;
+    vertical-align: middle;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
